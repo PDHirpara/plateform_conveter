@@ -24,16 +24,16 @@ class _SettingsState extends State<Settings> {
           ? Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(top: 30.0, left: 30),
+                  padding: const EdgeInsets.only(top: 30.0, left: 30),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.person,
                         color: Colors.grey,
                         size: 25,
                       ),
-                      Padding(
+                      const Padding(
                         padding: EdgeInsets.only(right: 90.0),
                         child: Text(
                           " Profile",
@@ -56,16 +56,16 @@ class _SettingsState extends State<Settings> {
                 Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(top: 30.0, left: 30),
+                      padding: const EdgeInsets.only(top: 30.0, left: 30),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Icon(
+                          const Icon(
                             Icons.person,
                             color: Colors.grey,
                             size: 25,
                           ),
-                          Padding(
+                          const Padding(
                             padding: EdgeInsets.only(right: 90.0),
                             child: Text(
                               " Profile",
@@ -93,16 +93,16 @@ class _SettingsState extends State<Settings> {
           : Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(top: 30.0, left: 30),
+                  padding: const EdgeInsets.only(top: 30.0, left: 30),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.person,
                         color: Colors.grey,
                         size: 25,
                       ),
-                      Padding(
+                      const Padding(
                         padding: EdgeInsets.only(right: 90.0),
                         child: Text(
                           " Profile",
@@ -123,7 +123,7 @@ class _SettingsState extends State<Settings> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 28.0),
+                  padding: const EdgeInsets.only(top: 28.0),
                   child: GestureDetector(
                     onTap: () async {
                       final XFile? image = await global.picker
@@ -138,7 +138,7 @@ class _SettingsState extends State<Settings> {
                       child: Stack(
                         children: [
                           if (global.pic == null)
-                            Icon(
+                            const Icon(
                               Icons.add_a_photo_outlined,
                               color: Colors.purple,
                               size: 30,
@@ -174,7 +174,7 @@ class _SettingsState extends State<Settings> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     GestureDetector(
-                      child: Padding(
+                      child: const Padding(
                         padding: EdgeInsets.only(right: 40.0, top: 10),
                         child: Text(
                           "save",
@@ -184,7 +184,7 @@ class _SettingsState extends State<Settings> {
                       ),
                     ),
                     GestureDetector(
-                      child: Padding(
+                      child: const Padding(
                         padding: EdgeInsets.only(top: 10.0),
                         child: Text(
                           "cancel",
@@ -195,14 +195,14 @@ class _SettingsState extends State<Settings> {
                     ),
                   ],
                 ),
-                Divider(
+                const Divider(
                   thickness: 2,
                   height: 29,
                 ),
                 Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(top: 30.0, left: 30),
+                      padding: const EdgeInsets.only(top: 30.0, left: 30),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -217,7 +217,7 @@ class _SettingsState extends State<Settings> {
                             size: 25,
                           ),
                           Padding(
-                            padding: EdgeInsets.only(right: 10.0),
+                            padding: const EdgeInsets.only(right: 10.0),
                             child: Text(
                               (Provider.of<themeprovider>(context, listen: true)
                                           .theme3
@@ -225,7 +225,7 @@ class _SettingsState extends State<Settings> {
                                       false)
                                   ? "wanna sunny"
                                   : "wanna dark",
-                              style: TextStyle( 
+                              style: const TextStyle(
                                   fontWeight: FontWeight.w500, fontSize: 20),
                             ),
                           ),

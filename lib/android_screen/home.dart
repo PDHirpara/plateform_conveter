@@ -1,5 +1,3 @@
-
-
 import 'package:ch_2/android_screen/call.dart';
 import 'package:ch_2/android_screen/chats.dart';
 import 'package:ch_2/android_screen/settings.dart';
@@ -26,14 +24,16 @@ class _homeState extends State<home> {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
-          bottom: TabBar(
+          bottom: const TabBar(
             tabs: [
-              Tab(icon: Icon(Icons.group_add, color: Colors.black)),
+              Tab(
+                icon: Icon(Icons.group_add),
+              ),
               Tab(
                   child: Text(
                 "Chats",
                 style: TextStyle(
-                    color: Colors.black,
+                    // color: Colors.black,
                     fontWeight: FontWeight.w400,
                     fontSize: 17),
               )),
@@ -41,7 +41,7 @@ class _homeState extends State<home> {
                   child: Text(
                 "Call",
                 style: TextStyle(
-                    color: Colors.black,
+                    // color: Colors.black,
                     fontWeight: FontWeight.w400,
                     fontSize: 17),
               )),
@@ -49,17 +49,15 @@ class _homeState extends State<home> {
                   child: Text(
                 "Settings",
                 style: TextStyle(
-                    color: Colors.black,
+                    // color: Colors.black,
                     fontWeight: FontWeight.w400,
                     fontSize: 17),
               )),
             ],
           ),
-          title: Text(
+          title: const Text(
             'Plateform',
-            style: TextStyle(color: Colors.black),
           ),
-          backgroundColor: Colors.white,
           actions: [
             Switch(
                 value: Provider.of<platformprovider>(context, listen: true)

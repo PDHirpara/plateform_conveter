@@ -28,25 +28,25 @@ class _callState extends State<call> {
                       ));
                     },
                     child: ListTile(
-                      trailing: Icon(Icons.call),
+                      trailing: const Icon(Icons.call),
                       leading: CircleAvatar(
                         radius: 50,
                         foregroundImage: FileImage(File(global.pic1!.path)),
                       ),
                       title: Padding(
-                        padding: EdgeInsets.only(left: 20.0),
+                        padding: const EdgeInsets.only(left: 20.0),
                         child: Text(
-                          "${Contactprovider.allcontact[index].MobileNumber}",
-                          style: TextStyle(
-                              fontSize: 20,
-                              color: Color.fromARGB(255, 23, 18, 18)),
+                          Contactprovider.allcontact[index].MobileNumber,
+                          style: const TextStyle(
+                            fontSize: 20,
+                          ),
                         ),
                       ),
                     ),
                   );
                 },
               )
-            : Center(
+            : const Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

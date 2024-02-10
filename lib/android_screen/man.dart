@@ -33,7 +33,6 @@ class _manState extends State<man> {
                     await global.picker1.pickImage(source: ImageSource.camera);
                 setState(() {
                   global.pic1 = image;
-                  
                 });
               },
               child: CircleAvatar(
@@ -42,9 +41,8 @@ class _manState extends State<man> {
                 child: Stack(
                   children: [
                     if (global.pic1 == null)
-                      Icon(
+                      const Icon(
                         Icons.add_a_photo_outlined,
-                        color: const Color.fromARGB(255, 80, 75, 81),
                         size: 30,
                       )
                     else
@@ -58,7 +56,7 @@ class _manState extends State<man> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 15, right: 15),
+            padding: const EdgeInsets.only(top: 10.0, left: 15, right: 15),
             child: TextFormField(
               controller: global.namecontroller,
               onSaved: (val) {
@@ -66,9 +64,8 @@ class _manState extends State<man> {
               },
               textAlign: TextAlign.start,
               decoration: InputDecoration(
-                  prefixIcon: Icon(
+                  prefixIcon: const Icon(
                     Icons.person,
-                    color: Colors.black,
                   ),
                   hintText: "Full Name",
                   border: OutlineInputBorder(
@@ -76,7 +73,7 @@ class _manState extends State<man> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 15, right: 15),
+            padding: const EdgeInsets.only(top: 10.0, left: 15, right: 15),
             child: TextFormField(
               keyboardType: TextInputType.number,
               controller: global.mobilenumbercontroller,
@@ -85,9 +82,8 @@ class _manState extends State<man> {
               },
               textAlign: TextAlign.start,
               decoration: InputDecoration(
-                  prefixIcon: Icon(
+                  prefixIcon: const Icon(
                     Icons.call,
-                    color: Colors.black,
                   ),
                   hintText: "Phone Number",
                   border: OutlineInputBorder(
@@ -95,7 +91,7 @@ class _manState extends State<man> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 15, right: 15),
+            padding: const EdgeInsets.only(top: 10.0, left: 15, right: 15),
             child: TextFormField(
               controller: global.emailcontroller,
               onSaved: (val) {
@@ -103,9 +99,8 @@ class _manState extends State<man> {
               },
               textAlign: TextAlign.start,
               decoration: InputDecoration(
-                  prefixIcon: Icon(
+                  prefixIcon: const Icon(
                     Icons.chat,
-                    color: Colors.black,
                   ),
                   hintText: "Chat Conversation",
                   border: OutlineInputBorder(
@@ -130,9 +125,9 @@ class _manState extends State<man> {
                 padding: const EdgeInsets.all(14.0),
                 child: Row(
                   children: [
-                    Icon(Icons.calendar_today),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
+                    const Icon(Icons.calendar_today),
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
                       child: Text("Pick a date       "),
                     ),
                     Text(
@@ -155,9 +150,9 @@ class _manState extends State<man> {
                 padding: const EdgeInsets.all(14.0),
                 child: Row(
                   children: [
-                    Icon(Icons.watch),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
+                    const Icon(Icons.watch),
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
                       child: Text("Pick a time       "),
                     ),
                     Text(
@@ -175,7 +170,7 @@ class _manState extends State<man> {
                 ),
               );
             },
-            child: Text("save"),
+            child: const Text("save"),
           )
         ],
       ),
