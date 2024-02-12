@@ -75,6 +75,7 @@ class _manState extends State<man> {
           Padding(
             padding: const EdgeInsets.only(top: 10.0, left: 15, right: 15),
             child: TextFormField(
+              maxLength: 10,
               keyboardType: TextInputType.number,
               controller: global.mobilenumbercontroller,
               onSaved: (val) {

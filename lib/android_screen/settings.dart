@@ -53,6 +53,10 @@ class _SettingsState extends State<Settings> {
                     ],
                   ),
                 ),
+                const Divider(
+                  thickness: 1,
+                  height: 29,
+                ),
                 Column(
                   children: [
                     Padding(
@@ -60,29 +64,42 @@ class _SettingsState extends State<Settings> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Icon(
-                            Icons.person,
+                          Icon(
+                            (Provider.of<themeprovider>(context, listen: true)
+                                        .theme3
+                                        .isdark ==
+                                    false)
+                                ? Icons.sunny
+                                : Icons.dark_mode,
                             color: Colors.grey,
                             size: 25,
                           ),
-                          const Padding(
-                            padding: EdgeInsets.only(right: 90.0),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 10.0),
                             child: Text(
-                              " Profile",
-                              style: TextStyle(
+                              (Provider.of<themeprovider>(context, listen: true)
+                                          .theme3
+                                          .isdark ==
+                                      false)
+                                  ? "wanna sunny"
+                                  : "wanna dark",
+                              style: const TextStyle(
                                   fontWeight: FontWeight.w500, fontSize: 20),
                             ),
                           ),
                           Switch(
-                              value: Provider.of<profileprovider>(context,
-                                      listen: true)
-                                  .Plat1
-                                  .isios1,
-                              onChanged: (val) {
-                                Provider.of<profileprovider>(context,
-                                        listen: false)
-                                    .changeprofile1(val);
-                              }),
+                            value: Provider.of<profileprovider2>(context,
+                                    listen: true)
+                                .Plat2
+                                .isios2,
+                            onChanged: (val) {
+                              Provider.of<themeprovider>(context, listen: false)
+                                  .changetheme();
+                              Provider.of<profileprovider2>(context,
+                                      listen: false)
+                                  .changeprofile2(val);
+                            },
+                          ),
                         ],
                       ),
                     ),
@@ -105,7 +122,7 @@ class _SettingsState extends State<Settings> {
                       const Padding(
                         padding: EdgeInsets.only(right: 90.0),
                         child: Text(
-                          " Profile",
+                          "Profile",
                           style: TextStyle(
                               fontWeight: FontWeight.w500, fontSize: 20),
                         ),
@@ -157,10 +174,12 @@ class _SettingsState extends State<Settings> {
                 TextFormField(
                   textAlign: TextAlign.center,
                   decoration: InputDecoration(
-                      hintText: "enter your name...",
-                      border: OutlineInputBorder(
-                          borderSide: BorderSide.none,
-                          borderRadius: BorderRadius.circular(0))),
+                    hintText: "enter your name...",
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.circular(0),
+                    ),
+                  ),
                 ),
                 TextFormField(
                   textAlign: TextAlign.center,

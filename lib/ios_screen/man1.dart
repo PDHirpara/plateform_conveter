@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import 'package:ch_2/global.dart';
 import '../modal/profile_variable_model.dart';
 import '../provider/datetimeprovider.dart';
+import '../provider/themeprovider.dart';
 
 class man1 extends StatefulWidget {
   man1({Key? key}) : super(key: key);
@@ -28,9 +29,6 @@ class _man1State extends State<man1> {
           physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
-              const SizedBox(
-                height: 10,
-              ),
               GestureDetector(
                 onTap: () async {
                   final XFile? image = await global.picker1
@@ -40,16 +38,16 @@ class _man1State extends State<man1> {
                   });
                 },
                 child: Padding(
-                  padding: EdgeInsets.only(top: 80.0),
+                  padding: const EdgeInsets.only(top: 80.0),
                   child: CircleAvatar(
                     backgroundColor: Colors.grey,
                     radius: 50,
                     child: Stack(
                       children: [
                         if (global.pic1 == null)
-                          Icon(
+                          const Icon(
                             Icons.add_a_photo_outlined,
-                            color: const Color.fromARGB(255, 80, 75, 81),
+                            color: Color.fromARGB(255, 80, 75, 81),
                             size: 30,
                           )
                         else
@@ -85,6 +83,7 @@ class _man1State extends State<man1> {
               Transform.scale(
                 scale: 1.08,
                 child: CupertinoTextFormFieldRow(
+                  maxLength: 10,
                   controller: global.mobilenumbercontroller,
                   keyboardType: TextInputType.number,
                   decoration: BoxDecoration(
@@ -149,7 +148,17 @@ class _man1State extends State<man1> {
                       width: 10,
                     ),
                     Text(
-                        "${Provider.of<datetimeprovider>(context, listen: true).dateTimeModel.initialdate.day}/${Provider.of<datetimeprovider>(context, listen: true).dateTimeModel.initialdate.month}/${Provider.of<datetimeprovider>(context, listen: true).dateTimeModel.initialdate.year}")
+                      "${Provider.of<datetimeprovider>(context, listen: true).dateTimeModel.initialdate.day}/${Provider.of<datetimeprovider>(context, listen: true).dateTimeModel.initialdate.month}/${Provider.of<datetimeprovider>(context, listen: true).dateTimeModel.initialdate.year}",
+                      style: TextStyle(
+                        color:
+                            (Provider.of<themeprovider>(context, listen: true)
+                                        .theme3
+                                        .isdark ==
+                                    false)
+                                ? Colors.white
+                                : Colors.black,
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -187,7 +196,17 @@ class _man1State extends State<man1> {
                       width: 10,
                     ),
                     Text(
-                        "${Provider.of<datetimeprovider>(context, listen: true).Timemodal.initialtime.hour}:${Provider.of<datetimeprovider>(context, listen: true).Timemodal.initialtime.minute}")
+                      "${Provider.of<datetimeprovider>(context, listen: true).Timemodal.initialtime.hour}:${Provider.of<datetimeprovider>(context, listen: true).Timemodal.initialtime.minute}",
+                      style: TextStyle(
+                        color:
+                            (Provider.of<themeprovider>(context, listen: true)
+                                        .theme3
+                                        .isdark ==
+                                    false)
+                                ? Colors.white
+                                : Colors.black,
+                      ),
+                    ),
                   ],
                 ),
               ),

@@ -7,6 +7,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../provider/themeprovider.dart';
+
 class home1 extends StatefulWidget {
   home1({Key? key}) : super(key: key);
 
@@ -15,7 +17,7 @@ class home1 extends StatefulWidget {
 }
 
 class _home1State extends State<home1> {
-  List<Widget> _tabViews = [
+  final List<Widget> _tabViews = [
     man1(),
     chats1(),
     call1(),
@@ -25,18 +27,37 @@ class _home1State extends State<home1> {
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
         navigationBar: CupertinoNavigationBar(
-          
-            trailing: CupertinoSwitch(
-                value: Provider.of<platformprovider>(context, listen: true)
-                    .Plat
-                    .isios,
-                onChanged: (val) {
-                  Provider.of<platformprovider>(context, listen: false)
-                      .changePlatform(val);
-                })),
+          backgroundColor: (Provider.of<themeprovider>(context, listen: true)
+                      .theme3
+                      .isdark ==
+                  true)
+              ? Colors.white
+              : Colors.black,
+          leading: Center(
+            child: Text(
+              "Platform Coverter",
+              style: TextStyle(
+                color: (Provider.of<themeprovider>(context, listen: true)
+                            .theme3
+                            .isdark ==
+                        false)
+                    ? Colors.white
+                    : Colors.black,
+              ),
+            ),
+          ),
+          trailing: CupertinoSwitch(
+            value:
+                Provider.of<platformprovider>(context, listen: true).Plat.isios,
+            onChanged: (val) {
+              Provider.of<platformprovider>(context, listen: false)
+                  .changePlatform(val);
+            },
+          ),
+        ),
         child: CupertinoTabScaffold(
           tabBar: CupertinoTabBar(
-            items:  <BottomNavigationBarItem>[
+            items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
                 icon: Icon(CupertinoIcons.person_add),
                 label: 'Favorites',

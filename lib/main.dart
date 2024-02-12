@@ -10,7 +10,8 @@ import 'provider/platformprovider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(MultiProvider(
+  runApp(
+    MultiProvider(
       providers: [
         ListenableProvider(create: (context) => platformprovider()),
         ListenableProvider(create: (context) => profileprovider()),
@@ -38,5 +39,16 @@ void main() {
               : CupertinoApp(
                   debugShowCheckedModeBanner: false,
                   home: home1(),
-                )));
+                  theme: MaterialBasedCupertinoThemeData(
+                    materialTheme:
+                        (Provider.of<themeprovider>(context, listen: true)
+                                    .theme3
+                                    .isdark ==
+                                false)
+                            ? ThemeData.dark()
+                            : ThemeData.light(),
+                  ),
+                ),
+    ),
+  );
 }

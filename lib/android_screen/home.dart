@@ -8,15 +8,11 @@ import 'package:provider/provider.dart';
 
 import 'man.dart';
 
-class home extends StatefulWidget {
+class home extends StatelessWidget {
   home({Key? key}) : super(key: key);
 
-  @override
-  State<home> createState() => _homeState();
-}
-
-class _homeState extends State<home> {
   int i = 0;
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -47,7 +43,7 @@ class _homeState extends State<home> {
               )),
               Tab(
                   child: Text(
-                "Settings",
+                "Setting",
                 style: TextStyle(
                     // color: Colors.black,
                     fontWeight: FontWeight.w400,
